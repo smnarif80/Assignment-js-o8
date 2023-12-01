@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+    <style>
+        body{
+            background-color: yellow;
+            color: black;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        input{
+            font-size: 1.5rem;
+            border: 0.3rem solid black;
+            padding: 0.3rem;
+        }
+
+        button{
+            background-color: black;
+            color: #fff;
+            font-size: 2rem;
+            padding: 0.1rem 0.4rem;
+            margin: 1rem 0.2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Basic Calculator</h1>
+        <div>
+            <input type="number" id="inputOne" placeholder="Enter value 1">
+            <input type="number" id="inputTwo" placeholder="Enter value 2">
+        </div>
+
+        <div>
+            <button onclick="add()">Add +</button>
+            <button onclick="subtract()">Subtract -</button>
+            <button onclick="division()">Division /</button>
+            <button onclick="multiply()">Multiply *</button>
+        </div>
+
+        <div>
+            <h2>Total : <span id="result">0</span></h2>
+        </div>
+    </section>
+
+    <script>
+        const inputOne=document.getElementById("inputOne");
+        const inputTwo=document.getElementById("inputTwo");
+        const result=document.getElementById("result");
+
+        function add() {
+            if (inputOne.value && inputTwo.value) {
+                let add=parseInt(inputOne.value) + parseInt( inputTwo.value);
+                result.innerHTML=add;
+                clearUser();
+            } else {
+                alert("Please Enter the Value");
+            }
+        }
+
+        function subtract() {
+            if (inputOne.value && inputTwo.value) {
+                let subtract=parseInt(inputOne.value) - parseInt( inputTwo.value);
+                result.innerHTML=subtract;
+                clearUser();
+            } else {
+                alert("Please Enter the Value");
+            }
+        }
+
+        function division() {
+            if (inputOne.value && inputTwo.value) {
+                let division = parseInt(inputOne.value) / parseInt( inputTwo.value);
+                result.innerHTML=division;
+                clearUser();
+            } else {
+                alert("Please Enter the Value");
+            }
+        }
+
+        function multiply() {
+            if (inputOne.value && inputTwo.value) {
+                let multiply = parseInt(inputOne.value) * parseInt( inputTwo.value);
+                result.innerHTML=multiply;
+                clearUser();
+
+            } else {
+                alert("Please Enter the Value");
+            }
+        }
+
+        function clearUser() {
+            inputOne.value="";
+            inputTwo.value="";
+        }
+    </script>
+</body>
+</html>
